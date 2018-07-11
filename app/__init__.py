@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 
+from app.apis import init_api
 from app.ext import init_ext
 from app.settings import envs
 from app.views import init_blueprint
@@ -14,4 +15,5 @@ def create_app():
     init_ext(app)
     # 初始化蓝图
     init_blueprint(app)
+    init_api(app=app)
     return app
